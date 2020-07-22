@@ -18,19 +18,18 @@ _Beyond commit-based debugging_
 **Extendable**
 - SaaS Integrations can multiply CI value
 
-
 ---
 
 #### Declarative builds are good
 
 **Self documenting**
-- Embedded build definitions allow build processes to be versioned
+- Text allows process versioning
 
 **Consistent**
-- Deterministic builds provide strong guarantees about your outputs
+- Deterministic builds provide strong guarantees
 
 **Verifiable**
-- Each commit’s build output should be an exact match
+- Each commit’s output should be verifiable
 
 
 ---
@@ -39,23 +38,23 @@ _Beyond commit-based debugging_
 
 ---
 
-## YAML.
+## … YAML
 
 ---
 
-#### YAML* is ...
+### YAML is …
 
-- ~Mostly readable …
-- Not very writable
-- Magic-strings, as-a-service
+---
+
+- ~Mostly readable
+- Not very ‘writable’
+- Resistant to refactoring
 - Everyone’s _ad hoc_ DSL
-
-<small>* as a build specification language</small>
 
 ---
 
 - Developer friction is high
-- Tooling support is poor, 
+- Tooling support is poor
 - … especially for extensions and integrations
 
 ---
@@ -64,27 +63,38 @@ _Beyond commit-based debugging_
 
 ---
 
-- We're more attached to our actual projects than to any CI system
-- developers should be able to run the build!
-- this allows experimentation, use of tools
-- dotnet core is cross platform, and we desire cross platform build
-- Imagine being able to ... debug the build!
+- Experimentation should be cheap
+- Build integrations should not be arbitrarily limited
+
+- Developers should be able to -
+    - Run the build
+    - Debug the build
 
 ---
 
-### The Idea
+### An Idea
+
+---
 
 What if we …
 
-- Generate the build pipeline for the CI system
-- … but run our own build process,
-- exposing tasks and parameters to automation,
-- and wrap this in tools made for developer comfort.
+- run our own build process
+- generate a CI pipeline
+- exposing tasks and parameters to automation
+- and wrap this all in tools made for developer comfort?
 
+---
 
 ##### Thankfully, someone did.
 
-—
+---
 
 ## Nuke.Build
+
+_[ Demo ]_
+
+---
+
+
+
 
