@@ -1,23 +1,18 @@
-using System;
-using System.Linq;
 using Nuke.Common;
 using Nuke.Common.CI.AzurePipelines;
 using Nuke.Common.Execution;
 using Nuke.Common.Git;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
-using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
 using Nuke.Common.Utilities.Collections;
-using static Nuke.Common.EnvironmentInfo;
 using static Nuke.Common.IO.FileSystemTasks;
-using static Nuke.Common.IO.PathConstruction;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 [CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
-[AzurePipelines(
+[AuthenticatedAzurePipeline(
     null,
     AzurePipelinesImage.WindowsLatest,
     InvokedTargets = new[] {
@@ -25,11 +20,12 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
     },
     NonEntryTargets = new[] {nameof(Restore)},
     PullRequestsBranchesInclude = new[] {
-        "hotfix/*", "release/*", "develop", "master"
+        "hotfix/*", "release/*", "master"
     },
     TriggerBranchesInclude = new[] {
-        "feature/*", "hotfix/*", "release/*", "user/*", "develop", "master"
+        "feature/*", "hotfix/*", "release/*", "user/*", "master"
     }, TriggerPathsExclude = new[] {"docs"}, PullRequestsAutoCancel = true)]
+[DotNetVerbosityMapping]
 class Build : NukeBuild
 {
     /// Support plugins are available for:

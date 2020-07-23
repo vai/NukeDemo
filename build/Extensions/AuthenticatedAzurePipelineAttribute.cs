@@ -9,8 +9,8 @@ using Nuke.Common.Execution;
 using Nuke.Common.Tooling;
 
 [SuppressMessage("ReSharper", "CheckNamespace")]
-public class AuthenticatedPipelineAttribute : AzurePipelinesAttribute {
-  public AuthenticatedPipelineAttribute([CanBeNull] string suffix, AzurePipelinesImage image,
+public class AuthenticatedAzurePipelineAttribute : AzurePipelinesAttribute {
+  public AuthenticatedAzurePipelineAttribute([CanBeNull] string suffix, AzurePipelinesImage image,
     params AzurePipelinesImage[] images)
     : base(suffix, image, images) { }
 
