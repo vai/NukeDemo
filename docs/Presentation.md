@@ -18,19 +18,18 @@ _Beyond commit-based debugging_
 **Extendable**
 - SaaS Integrations can multiply CI value
 
-
 ---
 
 #### Declarative builds are good
 
 **Self documenting**
-- Embedded build definitions allow build processes to be versioned
+- Text allows process versioning
 
 **Consistent**
-- Deterministic builds provide strong guarantees about your outputs
+- Deterministic builds are preferred
 
 **Verifiable**
-- Each commit’s build output should be an exact match
+- Each commit’s output is verifiable
 
 
 ---
@@ -39,23 +38,22 @@ _Beyond commit-based debugging_
 
 ---
 
-## YAML.
+## … YAML
 
 ---
 
-#### YAML* is ...
-
-- ~Mostly readable …
-- Not very writable
-- Magic-strings, as-a-service
+- ~Mostly readable
+- Not very ‘writable’
+- Made of edge-cases
+- Resistant to refactoring
 - Everyone’s _ad hoc_ DSL
 
-<small>* as a build specification language</small>
-
 ---
 
+##### So, 
+
 - Developer friction is high
-- Tooling support is poor, 
+- Tooling support is poor
 - … especially for extensions and integrations
 
 ---
@@ -64,27 +62,69 @@ _Beyond commit-based debugging_
 
 ---
 
-- We're more attached to our actual projects than to any CI system
-- developers should be able to run the build!
-- this allows experimentation, use of tools
-- dotnet core is cross platform, and we desire cross platform build
-- Imagine being able to ... debug the build!
+- Experimentation should be cheap
+- Build integrations should not be arbitrarily limited
+
+- Developers should be able to -
+    - Run the build
+    - Debug the build
 
 ---
 
-### The Idea
+### An Idea
+
+---
 
 What if we …
 
-- Generate the build pipeline for the CI system
-- … but run our own build process,
-- exposing tasks and parameters to automation,
-- and wrap this in tools made for developer comfort.
+- write our own build process
+- and generate a CI pipeline?
 
 
-##### Thankfully, someone did.
+---
 
-—
+We could …
+
+- expose tasks and parameters to automation
+- and wrap it in tools made for developer comfort
+
+---
 
 ## Nuke.Build
+
+---
+
+Generates builds for -
+
+- Azure
+- AppVeyor
+- GitHub
+- GitLab
+- Travis
+- TeamCity
+
+---
+
+And, ...
+
+- Build scripts for Mac, Linux, Windows
+- Extensions for VS, Code, Rider, others
+- Dedicated CLI build
+- Built in build script help/options
+
+---
+
+_[ Demo ]_
+
+---
+
+
+### References
+
+Nuke [nuke.build](https://nuke.build/)
+
+Demo repo [on GitHub](https://github.com/vai/NukeDemo)
+
+
+
 
