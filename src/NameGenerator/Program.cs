@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace NameGenerator {
-  internal class Program {
+  internal static class Program {
 
     // These are poached directly from Docker / Moby
     // https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go
    
-    static string[] Modifiers { get; } = new[] {
+    static string[] Modifiers { get; } = {
       "admiring",
       "adoring",
       "affectionate",
@@ -118,7 +119,7 @@ namespace NameGenerator {
       "zen"
     };
 
-    static string[] Scientists { get; } = new[] {
+    static string[] Scientists { get; } = {
       // Muhammad ibn Jābir al-Ḥarrānī al-Battānī was a founding father of astronomy. https://en.wikipedia.org/wiki/Mu%E1%B8%A5ammad_ibn_J%C4%81bir_al-%E1%B8%A4arr%C4%81n%C4%AB_al-Batt%C4%81n%C4%AB
       "albattani",
 
@@ -858,7 +859,7 @@ namespace NameGenerator {
       Console.WriteLine(name);
     }
 
-    static string RandomItem(string[] list) =>
-      list[Rand.Next(0, list.Length)];
+    static string RandomItem(IReadOnlyList<string> list) =>
+      list[Rand.Next(0, list.Count)];
   }
 }
