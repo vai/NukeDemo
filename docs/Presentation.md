@@ -123,7 +123,7 @@ _[ Demo ]_
 
 Nuke [nuke.build](https://nuke.build/)
 
-Demo repo [qwrk-dev/NukeDemo](https://github.com/qwrk-dev/NukeDemo)
+Demo repo [on GitHub](https://github.com/vai/NukeDemo)
 
 
 
