@@ -15,6 +15,8 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 [AuthenticatedAzurePipeline(
     null,
     AzurePipelinesImage.WindowsLatest,
+    AzurePipelinesImage.UbuntuLatest,
+    AzurePipelinesImage.MacOsLatest,
     InvokedTargets = new[] {
         nameof(Compile)
     },

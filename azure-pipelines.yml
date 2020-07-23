@@ -41,3 +41,31 @@ stages:
           - task: CmdLine@2
             inputs:
               script: './build.cmd Restore Compile --skip'
+  - stage: ubuntu_latest
+    displayName: 'ubuntu-latest'
+    dependsOn: [  ]
+    pool:
+      vmImage: 'ubuntu-latest'
+    jobs:
+      - job: Compile
+        displayName: 'Compile'
+        dependsOn: [  ]
+        steps:
+          - task: NuGetAuthenticate@0
+          - task: CmdLine@2
+            inputs:
+              script: './build.cmd Restore Compile --skip'
+  - stage: macOS_latest
+    displayName: 'macOS-latest'
+    dependsOn: [  ]
+    pool:
+      vmImage: 'macOS-latest'
+    jobs:
+      - job: Compile
+        displayName: 'Compile'
+        dependsOn: [  ]
+        steps:
+          - task: NuGetAuthenticate@0
+          - task: CmdLine@2
+            inputs:
+              script: './build.cmd Restore Compile --skip'
