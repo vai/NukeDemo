@@ -10,6 +10,21 @@ using Nuke.Common.Utilities.Collections;
 using static Nuke.Common.IO.FileSystemTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
+#region demo refs
+using Nuke.Common.Tools.DocFX;
+using Nuke.Common.Tools.Docker;
+using Nuke.Common.ChangeLog;
+using Nuke.Common.Tools.EntityFramework;
+using Nuke.Common.Tools.GitReleaseManager;
+using Nuke.Common.Tools.Helm;
+using Nuke.Common.Tools.InspectCode;
+using Nuke.Common.Tools.Kubernetes;
+using Nuke.Common.Tools.NSwag;
+using Nuke.Common.Tools.SpecFlow;
+using Nuke.Common.Tools.TestCloud;
+#endregion
+
+
 [CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
 [AuthenticatedAzurePipeline(
@@ -40,10 +55,10 @@ class Build : NukeBuild
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
-
+    
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion] readonly GitVersion GitVersion;
+    [GitVersion(NoFetch = true)] readonly GitVersion GitVersion;
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
