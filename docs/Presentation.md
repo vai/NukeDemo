@@ -38,7 +38,7 @@ _Beyond commit-based debugging_
 
 ---
 
-## … YAML. It’s …
+## … YAML
 
 ---
 
@@ -51,6 +51,7 @@ _Beyond commit-based debugging_
 ---
 
 ##### So, 
+
 - Developer friction is high
 - Tooling support is poor
 - … especially for extensions and integrations
@@ -85,7 +86,7 @@ What if we …
 We could …
 
 - expose tasks and parameters to automation
-- and wrap this all in tools made for developer comfort
+- and wrap it in tools made for developer comfort
 
 ---
 
@@ -93,7 +94,8 @@ We could …
 
 ---
 
-Generates builds for
+Generates builds for -
+
 - Azure
 - AppVeyor
 - GitHub
@@ -103,9 +105,10 @@ Generates builds for
 
 ---
 
-And, 
+And, ...
+
 - Build scripts for Mac, Linux, Windows
-- Extensions for VS, Code, Rider, others.
+- Extensions for VS, Code, Rider, others
 - Dedicated CLI build
 - Built in build script help/options
 
@@ -119,6 +122,7 @@ _[ Demo ]_
 ### References
 
 Nuke [nuke.build](https://nuke.build/)
+
 Demo repo [qwrk-dev/NukeDemo](https://github.com/qwrk-dev/NukeDemo)
 
 
