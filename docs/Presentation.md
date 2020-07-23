@@ -26,10 +26,10 @@ _Beyond commit-based debugging_
 - Text allows process versioning
 
 **Consistent**
-- Deterministic builds provide strong guarantees
+- Deterministic builds are preferred
 
 **Verifiable**
-- Each commit’s output should be verifiable
+- Each commit’s output is verifiable
 
 
 ---
@@ -38,21 +38,19 @@ _Beyond commit-based debugging_
 
 ---
 
-## … YAML
-
----
-
-### YAML is …
+## … YAML. It’s …
 
 ---
 
 - ~Mostly readable
 - Not very ‘writable’
+- Made of edge-cases
 - Resistant to refactoring
 - Everyone’s _ad hoc_ DSL
 
 ---
 
+##### So, 
 - Developer friction is high
 - Tooling support is poor
 - … especially for extensions and integrations
@@ -78,22 +76,50 @@ _Beyond commit-based debugging_
 
 What if we …
 
-- run our own build process
-- generate a CI pipeline
-- exposing tasks and parameters to automation
-- and wrap this all in tools made for developer comfort?
+- write our own build process
+- and generate a CI pipeline?
+
 
 ---
 
-##### Thankfully, someone did.
+We could …
+
+- expose tasks and parameters to automation
+- and wrap this all in tools made for developer comfort
 
 ---
 
 ## Nuke.Build
 
+---
+
+Generates builds for
+- Azure
+- AppVeyor
+- GitHub
+- GitLab
+- Travis
+- TeamCity
+
+---
+
+And, 
+- Build scripts for Mac, Linux, Windows
+- Extensions for VS, Code, Rider, others.
+- Dedicated CLI build
+- Built in build script help/options
+
+---
+
 _[ Demo ]_
 
 ---
+
+
+### References
+
+Nuke [nuke.build](https://nuke.build/)
+Demo repo [qwrk-dev/NukeDemo](https://github.com/qwrk-dev/NukeDemo)
 
 
 
