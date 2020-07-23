@@ -5,7 +5,7 @@
 #
 #     - To turn off auto-generation set:
 #
-#         [AzurePipelines (AutoGenerate = false)]
+#         [AuthenticatedAzurePipeline (AutoGenerate = false)]
 #
 #     - To trigger manual generation invoke:
 #
@@ -21,7 +21,6 @@ trigger:
       - hotfix/*
       - release/*
       - user/*
-      - develop
       - master
   paths:
     exclude:
@@ -38,6 +37,7 @@ stages:
         displayName: 'Compile'
         dependsOn: [  ]
         steps:
+          - task: NuGetAuthenticate@0
           - task: CmdLine@2
             inputs:
               script: './build.cmd Restore Compile --skip'
