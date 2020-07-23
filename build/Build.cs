@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using Nuke.Common;
+using Nuke.Common.CI.AzurePipelines;
 using Nuke.Common.Execution;
 using Nuke.Common.Git;
 using Nuke.Common.IO;
@@ -16,6 +17,19 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 [CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
+[AzurePipelines(
+    null,
+    AzurePipelinesImage.WindowsLatest,
+    InvokedTargets = new[] {
+        nameof(Compile)
+    },
+    NonEntryTargets = new[] {nameof(Restore)},
+    PullRequestsBranchesInclude = new[] {
+        "hotfix/*", "release/*", "develop", "master"
+    },
+    TriggerBranchesInclude = new[] {
+        "feature/*", "hotfix/*", "release/*", "user/*", "develop", "master"
+    }, TriggerPathsExclude = new[] {"docs"}, PullRequestsAutoCancel = true)]
 class Build : NukeBuild
 {
     /// Support plugins are available for:
